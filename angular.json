@@ -27,7 +27,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -52,6 +53,21 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "staging": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
@@ -64,6 +80,9 @@
             },
             "development": {
               "browserTarget": "ScalableUI:build:development"
+            },
+            "staging": {
+              "browserTarget": "ScalableUI:build:staging"
             }
           },
           "defaultConfiguration": "development"
@@ -97,12 +116,14 @@
           "options": {
             "outputPath": "dist/ScalableUI/server",
             "main": "server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "externalDependencies": []
           },
           "configurations": {
             "production": {
               "outputHashing": "media"
             },
+            "staging": {},
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -119,6 +140,10 @@
             "development": {
               "browserTarget": "ScalableUI:build:development",
               "serverTarget": "ScalableUI:server:development"
+            },
+            "staging": {
+              "browserTarget": "ScalableUI:build:staging",
+              "serverTarget" : "ScalableUI:server:staging"
             },
             "production": {
               "browserTarget": "ScalableUI:build:production",
@@ -138,6 +163,10 @@
             "production": {
               "browserTarget": "ScalableUI:build:production",
               "serverTarget": "ScalableUI:server:production"
+            },
+            "staging": {
+              "browserTarget": "ScalableUI:build:staging",
+              "serverTarget" : "ScalableUI:server:staging"
             },
             "development": {
               "browserTarget": "ScalableUI:build:development",

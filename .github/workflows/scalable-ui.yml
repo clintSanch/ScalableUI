@@ -1,5 +1,9 @@
 name: Deploy to Vercel
 
+env:
+    VERCEL_ORG_ID: ${{}}
+    VERCEL_PROJECT_ID: ${{}}
+
 on:
   push:
     branches: [ "master" ]

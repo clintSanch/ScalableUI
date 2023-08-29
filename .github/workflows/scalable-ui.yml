@@ -1,0 +1,45 @@
+name: CI/CD Nodejs scalable-ui to Vercel
+
+on:
+    push:
+        branches: ["master"]
+    pull_request:
+        branches: ["master"]
+        
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        
+        strategy:
+            matrix:
+                node-version: [14.x, 16.x, 18.x]
+
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js ${{matrix.node-version}}
+              uses: actions/setup-node@v3
+              with:
+                node-version: ${{matrix.node-version}}
+
+            - name: Install dependencies
+              run: npm ci
+            - name: build now  
+              run: npm run build
+---
+    tests:
+    - name: Run Tests of scalable-ui against Vercel
+      runs-on: ubuntu-latest
+      run: npm test
+
+---      
+    deployment:
+    - name: Deploy scalable-ui to Production server
+      uses: amondnet/vercel-action@v20
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        vercel-token: ${{secrets.VERCEL_TOKEN}}
+        vercel-org-id: ${{secrets.VERCEL_ORG_ID}}
+        vercel-project-id: ${{secrets.VERCEL_PROJECT_ID}}
+            
+             ...

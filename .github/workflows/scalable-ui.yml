@@ -36,7 +36,7 @@ jobs:
     deployment:
     - name: Deploy scalable-ui to Production server
       uses: amondnet/vercel-action@v20
-      with:
+      env:
         github-token: ${{secrets.GITHUB_TOKEN}}
         vercel-token: ${{secrets.VERCEL_TOKEN}}
         vercel-org-id: ${{secrets.VERCEL_ORG_ID}}

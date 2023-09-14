@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StoreModule } from '@ngrx/store';
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    MatCardModule
   ],
   providers: [ provideClientHydration() ],
   bootstrap: [AppComponent]

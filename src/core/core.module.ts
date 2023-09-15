@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CoreRoutingModule } from './core-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -12,11 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    HeaderComponent,
-    FooterComponent
   ],
   imports: [
-    CommonModule, MatCardModule
+    CommonModule, CoreRoutingModule, MatCardModule
   ]
 })
 export class CoreModule { }

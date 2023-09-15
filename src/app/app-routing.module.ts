@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'core', loadChildren: ()=> import('../core/core.module').then(module => module.CoreModule)},
+  { path: 'feature', loadChildren: ()=> import('../feature/feature.module').then(module => module.FeatureModule)},
+  { path: 'shared', loadChildren: ()=> import('../shared/shared.module').then(module => module.SharedModule)}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

@@ -1,1 +1,20 @@
-<p>header works!</p>
+
+
+
+
+
+
+<div class="header" appHeader>
+    <a href="#default" class="logo">CompanyLogo</a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/abbout">About</a>
+    </div>
+    <div class="profile">
+      <ul>
+        <li><a routerLink="/register" onclick="loadRegisterComponent()">Register</a></li>
+        <li><a routerLink="/login" onclick="loadLoginComponent()">Login</a></li>
+      </ul>
+    </div>
+  </div>

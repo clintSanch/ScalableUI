@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
   ],
   imports: [
     CommonModule, CoreRoutingModule, MatCardModule
-  ]
+  ],
+  exports: [LoginComponent, RegisterComponent]
 })
 export class CoreModule { }

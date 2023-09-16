@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainDirective } from './main.directive';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ScalableUI';
+
+  constructor( ){}
+
+  async ngOnInit(){}
+
+  loadComponent(){}
 }

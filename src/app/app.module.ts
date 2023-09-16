@@ -12,12 +12,16 @@ import { MatCardModule } from '@angular/material/card'
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MainDirective } from './main.directive';
+import { HeaderDirective } from './header/header.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,  
+    MainDirective, 
+    HeaderDirective
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { FooterComponent } from './footer/footer.component';
     StoreModule.forRoot({}, {}),
     MatCardModule
   ],
-  providers: [ provideClientHydration() ],
+  providers: [ provideClientHydration(), ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

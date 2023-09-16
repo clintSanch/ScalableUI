@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor(){}
+
+  async ngOnInit(){}
+
+  loadRegisterComponents(){}
+
+  loadLoginComponent(){}
+
 }

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  component_title = 'Register';
+
 }

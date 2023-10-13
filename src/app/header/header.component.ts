@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 import { HeaderDirective } from './header.directive';
 import { RegisterComponent } from 'src/core/components/register/register.component';
 import { LoginComponent } from 'src/core/components/login/login.component';
@@ -10,7 +10,7 @@ import { LoginComponent } from 'src/core/components/login/login.component';
 })
 export class HeaderComponent implements OnInit{
 
-  constructor(){}
+  constructor(private resolver: ComponentFactoryResolver, private viewComponentRef: ViewContainerRef){}
 
   @ViewChild(HeaderDirective, { static: true}) appHeader!: HeaderDirective
 

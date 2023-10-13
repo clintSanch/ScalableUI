@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --watch",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "build:stage": "ng build --configuration staging",
-    "build:prod": "ng build --configuration production",
-    "test": "ng test",
-    "dev:ssr": "ng run ScalableUI:serve-ssr",
+    "start": "nx serve --watch",
+    "build": "nx build",
+    "watch": "nx build --watch --configuration development",
+    "build:stage": "nx build --configuration staging",
+    "build:prod": "nx build --configuration production",
+    "test": "nx test",
+    "dev:ssr": "nx run ScalableUI:serve-ssr",
     "serve:ssr": "node dist/ScalableUI/server/main.js",
-    "build:ssr": "ng build && ng run ScalableUI:server",
-    "prerender": "ng run ScalableUI:prerender"
+    "build:ssr": "nx build && nx run ScalableUI:server",
+    "prerender": "nx run ScalableUI:prerender"
   },
   "private": true,
   "dependencies": {
@@ -37,9 +37,14 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",
+    "@angular-devkit/core": "~16.2.0",
+    "@angular-devkit/schematics": "~16.2.0",
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.0",
     "@nguniversal/builders": "^16.2.0",
+    "@nx/angular": "16.10.0",
+    "@nx/workspace": "16.10.0",
+    "@schematics/angular": "~16.2.0",
     "@types/express": "^4.17.0",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^16.11.7",
@@ -49,6 +54,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "nx": "16.10.0",
+    "nx-cloud": "latest",
     "typescript": "~4.9.4"
   }
 }

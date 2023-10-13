@@ -4,6 +4,8 @@ import { CoreRoutingModule } from './core-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
     RegisterComponent,
   ],
   imports: [
-    CommonModule, CoreRoutingModule, MatCardModule
+    CommonModule, CoreRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule
   ],
   exports: [LoginComponent, RegisterComponent]
 })

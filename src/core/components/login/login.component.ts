@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AuthService } from 'src/core/services/auth.service';
+import { User } from 'src/objectModels/user';
 
 @Component({
   selector: 'app-login',
@@ -8,5 +10,22 @@ import { Component } from '@angular/core';
 export class LoginComponent {
 
   component_title = 'Login';
+
+  constructor(private authservice: AuthService){}
+
+  @Input()
+  inputUser_name : User = '';
+
+  @Input()
+  inputPassword : User = '';
+
+  onSubmit(){}
+
+  handleUser(value: string){
+    this.inputUser_name = value;
+  }
+  handlePass(passValue: string){
+    this.inputPassword = passValue;
+  }
 
 }

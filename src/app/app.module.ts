@@ -20,8 +20,6 @@ import { HeaderDirective } from './header/header.directive';
     AppComponent,
     HeaderComponent,
     FooterComponent,  
-    MainDirective, 
-    HeaderDirective
   ],
   imports: [
     BrowserModule,

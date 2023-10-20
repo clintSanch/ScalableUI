@@ -4,11 +4,9 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": [
-          "build",
-          "test",
-          "server"
+          "ng", "build", "test"
         ],
-        "accessToken": "ZDRmYTFiM2UtMjhiYS00ZGJkLWEwOTEtYWMwZjM1NDE1ZWQ4fHJlYWQtd3JpdGU="
+        "accessToken": "N2Q3OWRlNDYtN2FmOS00MzJmLTk4YzUtMzdiODAyMzU5MWM4fHJlYWQtd3JpdGU="
       }
     }
   },

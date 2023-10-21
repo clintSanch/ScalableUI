@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AuthService } from 'src/core/services/auth.service';
 import { User } from 'src/objectModels/user';
+import { State, Store, createSelector, createFeatureSelector, createReducer } from '@ngrx/store';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent {
 
   component_title = 'Login';
 
-  constructor(private authservice: AuthService){}
+  constructor(private authservice: AuthService, private store: Store){}
 
   @Input()
   inputUser_name : User = '';

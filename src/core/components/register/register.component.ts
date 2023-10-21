@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from 'src/core/services/auth.service';
 import { PushPipe } from '@ngrx/component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',

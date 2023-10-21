@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainDirective } from './main.directive';
 import { HeaderDirective } from './header/header.directive';
+import { LoggerService } from 'src/shared/services/logger.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HeaderDirective } from './header/header.directive';
     StoreModule.forRoot({}, {}),
     MatCardModule
   ],
-  providers: [ provideClientHydration(), ],
+  providers: [ provideClientHydration(), LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

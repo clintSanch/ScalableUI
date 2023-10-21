@@ -5,7 +5,6 @@ on:
     pull_request:
       branches: [ "master" ]
   
-  @@ -17,29 +18,26 @@ jobs:
       runs-on: ubuntu-latest
   
       steps:
@@ -16,34 +15,34 @@ on:
       - name: build and tag image
       - uses: docker/build-push-action@v4
         run: |
-        docker build . \
-        --tag $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_VERSION
+         docker build . \
+         --tag ${{DOCKER_USER_NAME}}/${{IMAGE_NAME}}:$IMAGE_VERSION
   
       -name: login to docker hub/container
       -uses: docker/login-action@v4
-       with:
-         username: ${{env.DOCKER_USERNAME}}
+      with:
+         username: ${{env.DOCKER_USER_NAME}}
          password: ${{env.DOCKER_PASSWORD}}
         run: |
-        docker login -u $DOCKER_USERNAME -p DOCKER_PASSWORD
+         docker login -u ${{DOCKER_USER_NAME}} -p ${{DOCKER_PASSWORD}}
   
       -name: Test
        run:|
        echo --running test cases--
-         docker run --rm
+         docker tag testing:v1 ${{DOCKER_USER_NAME}}/testing:v1
        echo --tests completed-- 
   
       -name: build and push docker image
       -name: Publishing the image to Dockerhub/registry
       -uses: docker/build-push-action@v5
-       with:
+      with:
         context: .
         file: ./Dockerfile 
         push: true
         secrets: |
-           token: ${{env.GIT_AUTH_TOKEN}}
+           token: ${{GIT_AUTH_TOKEN}}
         run: |
-        docker push $DOCKER_USERNAME/$DOCKER_IMAGE:$IMAGE_VERSION
+         docker push ${{DOCKER_USER_NAME}}/${{DOCKER_IMAGE}}:${{IMAGE_VERSION}}
   
   
     deploy:

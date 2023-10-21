@@ -26,13 +26,12 @@ jobs:
               run: npm ci
             - name: build now  
               run: npm run build
----
     tests:
-    - name: Run Tests of scalable-ui against Vercel
-      runs-on: ubuntu-latest
+    -name: Run Tests of scalable-ui against Vercel
+    runs-on: ubuntu-latest
       run: npm test
 
----      
+     
     deployment:
     - name: Deploy scalable-ui to Production server
       uses: amondnet/vercel-action@v20

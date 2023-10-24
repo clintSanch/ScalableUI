@@ -1,9 +1,13 @@
-FROM node:14-alpine3.16
+FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /scalable-ui
 
-COPY . .
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+COPY package*.json ./
 
 RUN npm install
+
+EXPOSE 8000/tcp
+EXPOSE 8000/udp
 
 CMD [ "npm", "start" ]

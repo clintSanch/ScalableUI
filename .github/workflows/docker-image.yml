@@ -16,20 +16,20 @@ on:
       - uses: docker/build-push-action@v4
         run: |
          docker build . \
-         --tag ${{DOCKER_USER_NAME}}/${{IMAGE_NAME}}:$IMAGE_VERSION
+         --tag ${{secrets.DOCKER_USER_NAME}}/${{IMAGE_NAME}}:$IMAGE_VERSION
   
       -name: login to docker hub/container
       -uses: docker/login-action@v4
       with:
-         username: ${{env.DOCKER_USER_NAME}}
-         password: ${{env.DOCKER_PASSWORD}}
+         username: ${{secrets.DOCKER_USER_NAME}}
+         password: ${{secrets.DOCKER_PASSWORD}}
         run: |
-         docker login -u ${{DOCKER_USER_NAME}} -p ${{DOCKER_PASSWORD}}
+         docker login -u ${{secrets.DOCKER_USER_NAME}} -p ${{secrets.DOCKER_PASSWORD}}
   
       -name: Test
        run:|
        echo --running test cases--
-         docker tag testing:v1 ${{DOCKER_USER_NAME}}/testing:v1
+         docker tag testing:v1 ${{secrets.DOCKER_USER_NAME}}/testing:v1
        echo --tests completed-- 
   
       -name: build and push docker image
@@ -40,9 +40,9 @@ on:
         file: ./Dockerfile 
         push: true
         secrets: |
-           token: ${{GIT_AUTH_TOKEN}}
+           token: ${{secrets.GIT_AUTH_TOKEN}}
         run: |
-         docker push ${{DOCKER_USER_NAME}}/${{DOCKER_IMAGE}}:${{IMAGE_VERSION}}
+         docker push ${{secrets.DOCKER_USER_NAME}}/${{secrets.DOCKER_IMAGE}}:${{IMAGE_VERSION}}
   
   
     deploy:

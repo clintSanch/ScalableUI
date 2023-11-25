@@ -5,4 +5,6 @@ import { Logger } from '@ngrx/data';
 
 export class LoggerService {
 
+    constructor(){}
+
 }

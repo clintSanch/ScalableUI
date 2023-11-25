@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
     environmentName: "testing",
-    apiUrl: ""
+    apiUrl: "https://freshfarm.io/products"
 }

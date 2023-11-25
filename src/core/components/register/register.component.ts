@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from 'src/core/services/auth.service';
 import { PushPipe } from '@ngrx/component';
@@ -9,9 +9,13 @@ import { Observable } from 'rxjs';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
 
   component_title = 'Register';
+
+  ngOnInit(): void {
+      
+  }
 
   constructor(private fb: FormBuilder, private authService: AuthService){}
 

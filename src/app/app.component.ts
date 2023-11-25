@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, Renderer2, TemplateRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import { MainDirective } from './main.directive';
 
 @Component({
@@ -8,8 +8,13 @@ import { MainDirective } from './main.directive';
 })
 export class AppComponent implements OnInit{
   title = 'ScalableUI';
+  
+  @ViewChild('viewcontainer', {'read': ViewContainerRef}) viewcontainer: any;
+  @ViewChild(TemplateRef) template: TemplateRef<null> | undefined;
+  @ViewChildren('child', { 'read': ElementRef}) childComponent: QueryList<ElementRef> | undefined;
 
-  constructor( ){}
+  
+  constructor( private renderer: Renderer2, private host: ElementRef){}
 
   async ngOnInit(){}
 

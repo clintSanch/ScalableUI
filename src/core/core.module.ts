@@ -11,7 +11,9 @@ import { MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { StoreModule } from '@ngrx/store';
-
+import { FeatureService } from 'src/feature/services/feature.service';
+import { SharedService } from 'src/shared/services/shared.service';
+import { GeolocationService } from 'src/shared/services/geolocation.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
     RegisterComponent,
   ],
   imports: [
-    CommonModule, CoreRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatButtonModule, HttpClientModule, StoreModule.forRoot({user: })
+    CommonModule, CoreRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatButtonModule, HttpClientModule
   ],
   providers: [AuthService],
   exports: [LoginComponent, RegisterComponent]

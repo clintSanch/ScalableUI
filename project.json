@@ -133,7 +133,7 @@
           "vendorChunk": true
         }
       },
-      "defaultConfiguration": "production",
+      "defaultConfiguration": "development",
       "outputs": [
         "{options.outputPath}"
       ]

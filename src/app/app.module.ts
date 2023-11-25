@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainDirective } from './main.directive';
 import { HeaderDirective } from './header/header.directive';
 import { LoggerService } from 'src/shared/services/logger.service';
+import { GeolocationService } from 'src/shared/services/geolocation.service';
 
 @NgModule({
   declarations: [

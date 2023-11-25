@@ -1,0 +1,19 @@
+name: multi-environment deployment
+
+on:
+    push:
+        branches: ["master"]
+
+jobs:
+
+    deploy_to_QA:
+        name: Build && Deploy to QA Testing
+        environment:
+            name: QA
+
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+            node-version: [14.x, 16.x, 18.x]
+
+    steps:

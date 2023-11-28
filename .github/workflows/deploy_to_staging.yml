@@ -1,0 +1,24 @@
+
+
+# Continuous Integration ends, Continuous Delivery
+# Monitoring: tracking future errors
+# Debugging and Testing 
+# Infrastructure Parity: cloud provider, virtualization tools, API gateways, DNS providers, and more
+
+
+name: CI/CD-deployment to staging environment/stage
+imports:
+    - {qa_path: './deploy_to_qa.yml'}
+
+on:
+    push:
+        branches: ['staging']
+    pull_request:
+        branches: ['staging']
+
+
+
+jobs:
+    DeployStaging:
+        name: deployment to staging
+        needs: []

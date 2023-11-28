@@ -10,7 +10,8 @@ jobs:
     deploy_QA:
         name: Build && Deploy to QA testing
         environment:
-            name: QA
+            name: Development
+            url: https://github.com/clintSanch/ScalableUI/settings/environments/1587075091/edit
   
     runs-on: ubuntu-latest
   

@@ -7,8 +7,6 @@
 
 
 name: CI/CD-deployment to staging environment/stage
-imports:
-    - {qa_path: './deploy_to_qa.yml'}
 
 on:
     push:

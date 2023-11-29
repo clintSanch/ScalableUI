@@ -13,7 +13,7 @@ on:
     pull_request:
         branches: ['']   
 
-
+# QA should be an elevation of development environment
 jobs:
     DeployQA:
         name: deployment to QA
@@ -24,7 +24,7 @@ jobs:
     runs-on: Ubuntu-latest
     environment:
         name: QA
-        url: ${{secrets.environment.}}   
+        url: ${{}}   
     
         
     steps:

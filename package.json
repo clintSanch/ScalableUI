@@ -8,7 +8,9 @@
     "build:development": "nx build --configuration=development --watch",
     "build:staging": "nx build --configuration=staging",
     "build:production": "nx build --configuration=production",
-    "test": "nx test",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand",
     "dev:ssr": "nx run ScalableUI:serve-ssr",
     "serve:ssr": "node dist/ScalableUI/server/main.js",
     "build:ssr": "nx build && nx run ScalableUI:server",
@@ -49,18 +51,23 @@
     "@schematics/angular": "~16.2.0",
     "@types/express": "^4.17.0",
     "@types/jasmine": "~4.3.0",
+    "@types/jest": "^29.5.11",
     "@types/node": "^16.11.7",
     "jasmine-core": "~4.5.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
+    "jest": "^29.7.0",
+    "jest-preset-angular": "^13.1.4",
     "nx": "16.10.0",
     "nx-cloud": "latest",
     "typescript": "~4.9.4"
   },
   "nx": {
     "targets": {}
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-jest.ts"
+    ],
+    "globalSetup": "jest-preset-angular/global-setup"
   }
 }

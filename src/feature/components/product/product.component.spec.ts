@@ -19,4 +19,9 @@ describe('ProductComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render dynamically products and its features', () => {
+
+    expectAsync(component).toBeResolved();
+  });
 });

@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from 'src/objectModels/product';
 
 @Component({
   selector: 'app-product',
@@ -7,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ProductComponent {
 
-    @Input() something = ''
     @Output() somethig = new EventEmitter()
+
+    product : Product[] = [];
 }

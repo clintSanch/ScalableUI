@@ -14,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
 import { FeatureService } from 'src/feature/services/feature.service';
 import { SharedService } from 'src/shared/services/shared.service';
 import { GeolocationService } from 'src/shared/services/geolocation.service';
+import { DomDirective } from './coredirectives/dom.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { GeolocationService } from 'src/shared/services/geolocation.service';
   imports: [
     CommonModule, CoreRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatButtonModule, HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, DomDirective],
   exports: [LoginComponent, RegisterComponent]
 })
 export class CoreModule { }

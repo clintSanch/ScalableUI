@@ -14,26 +14,24 @@
 
 
 
-
-
-<form class="loginTemplate">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{component_title | uppercase}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-form-field>
-        <mat-label>User-name</mat-label>
-        <input matInput type="text" class="formControl" required placeholder="jina">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput type="password" class="formControl" required placeholder="password">
-      </mat-form-field>
-      <button type="submit" mat-raised-button color="primary">login</button>
-    </mat-card-content>
-    <mat-card-footer>
-      <p>Not Registered yet? <a routerLink="/register">here</a> </p>
-    </mat-card-footer>
-  </mat-card>
+<form class="loginTemplate" *coreDom>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{component_title | uppercase}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>User-name</mat-label>
+                <input matInput type="text" id="username" class="formControl" #username required placeholder="jina">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" id="password" class="formControl" #password required placeholder="password">
+            </mat-form-field>
+            <button type="submit" #okButton mat-raised-button color="primary">login</button>
+        </mat-card-content>
+        <mat-card-footer>
+            <p>Not Registered yet? <a routerLink="/register">here</a> </p>
+        </mat-card-footer>
+    </mat-card>
 </form>

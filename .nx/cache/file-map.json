@@ -100,7 +100,19 @@
         },
         {
           "file": ".nx/cache/d/daemon.log",
-          "hash": "17261546137400552151"
+          "hash": "7110014690001512140"
+        },
+        {
+          "file": ".nx/cache/d/server-process.json",
+          "hash": "4500545471456414078"
+        },
+        {
+          "file": ".nx/cache/file-map.json",
+          "hash": "12389003466964042038"
+        },
+        {
+          "file": ".nx/cache/lockfile.hash",
+          "hash": "789810208606981063"
         },
         {
           "file": ".nx/cache/nx-console-project-graph/project-graph.html",
@@ -143,6 +155,14 @@
         {
           "file": ".nx/cache/nx-console-project-graph/static/styles.js",
           "hash": "13596360365094399219"
+        },
+        {
+          "file": ".nx/cache/parsed-lock-file.json",
+          "hash": "18031244103962242649"
+        },
+        {
+          "file": ".nx/cache/project-graph.json",
+          "hash": "1666177631305976553"
         },
         {
           "file": ".vscode/extensions.json",
@@ -617,22 +637,6 @@
         {
           "file": "tsconfig.spec.json",
           "hash": "8535654255680754075"
-        },
-        {
-          "file": ".nx/cache/file-map.json",
-          "hash": "461935216087168611"
-        },
-        {
-          "file": ".nx/cache/project-graph.json",
-          "hash": "5316367869310880238"
-        },
-        {
-          "file": ".nx/cache/lockfile.hash",
-          "hash": "789810208606981063"
-        },
-        {
-          "file": ".nx/cache/parsed-lock-file.json",
-          "hash": "18031244103962242649"
         }
       ]
     }
